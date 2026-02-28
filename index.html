@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamboa Y Mata Abogados | Culiacán</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        header {
+            background: #0a1f44;
+            color: white;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 400;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(10,31,68,0.8), rgba(10,31,68,0.8)),
+                        url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero p {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        section {
+            padding: 80px 10%;
+        }
+
+        section h3 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #0a1f44;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .about, .contact {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .card h4 {
+            margin-bottom: 15px;
+            color: #0a1f44;
+        }
+
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .member {
+            text-align: center;
+        }
+
+        .member img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #d4af37;
+            color: #0a1f44;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #0a1f44;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Gamboa Y Mata Abogados</h1>
+    <nav>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#areas">Áreas</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Defendiendo sus derechos con compromiso y experiencia</h2>
+    <p>Despacho jurídico en Culiacán, Sinaloa</p>
+    <a href="#contacto" class="btn">Agendar Consulta</a>
+</section>
+
+<section id="nosotros">
+    <h3>Nosotros</h3>
+    <div class="about">
+        <p>
+            [Aquí puedes escribir la historia del despacho, experiencia, valores y misión.]
+        </p>
+    </div>
+</section>
+
+<section id="areas">
+    <h3>Áreas de Práctica</h3>
+    <div class="areas">
+        <div class="card">
+            <h4>Derecho Civil</h4>
+            <p>[Descripción breve del servicio]</p>
+        </div>
+        <div class="card">
+            <h4>Derecho Penal</h4>
+            <p>[Descripción breve del servicio]</p>
+        </div>
+        <div class="card">
+            <h4>Derecho Familiar</h4>
+            <p>[Descripción breve del servicio]</p>
+        </div>
+        <div class="card">
+            <h4>Derecho Mercantil</h4>
+            <p>[Descripción breve del servicio]</p>
+        </div>
+    </div>
+</section>
+
+<section id="equipo">
+    <h3>Nuestro Equipo</h3>
+    <div class="team">
+        <div class="member">
+            <img src="https://via.placeholder.com/180" alt="Abogado 1">
+            <h4>[Nombre del Abogado]</h4>
+            <p>[Especialidad]</p>
+        </div>
+        <div class="member">
+            <img src="https://via.placeholder.com/180" alt="Abogado 2">
+            <h4>[Nombre del Abogado]</h4>
+            <p>[Especialidad]</p>
+        </div>
+    </div>
+</section>
+
+<section id="contacto">
+    <h3>Contacto</h3>
+    <div class="contact">
+        <p><strong>Teléfono:</strong> [Número aquí]</p>
+        <p><strong>Email:</strong> [Correo aquí]</p>
+        <p><strong>Dirección:</strong> [Dirección en Culiacán, Sinaloa]</p>
+        <a href="#" class="btn">WhatsApp</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Gamboa Y Mata Abogados - Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
