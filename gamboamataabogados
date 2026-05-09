@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamboa Y Mata Abogados | Culiacán</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0a1f44;
+            --accent: #d4af37;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Modern Sticky Header */
+        header {
+            background: rgba(10, 31, 68, 0.98);
+            color: white;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 400;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero with Parallax-like feel */
+        .hero {
+            position: relative;
+            height: 90vh;
+            background: linear-gradient(rgba(10,31,68,0.7), rgba(10,31,68,0.7)),
+                        url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070") center/cover fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: clamp(32px, 5vw, 56px);
+            font-family: 'Playfair Display', serif;
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+
+        /* Animations for Cards & Images */
+        section { padding: 100px 10%; }
+
+        section h3 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            position: relative;
+        }
+
+        section h3::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--accent);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        /* Team Member Image Animation */
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .member {
+            text-align: center;
+            max-width: 250px;
+        }
+
+        .img-container {
+            overflow: hidden;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            border: 5px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .member img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .member:hover img {
+            transform: scale(1.15); /* Modern Zoom Effect */
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 35px;
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn:hover {
+            background: #b8962d;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 40px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 10px; font-size: 12px; }
+            section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Gamboa Y Mata</h1>
+    <nav>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#areas">Áreas</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div data-aos="fade-up" data-aos-duration="1000">
+        <h2>Defendiendo sus derechos con compromiso y experiencia</h2>
+        <p>Especialistas en soluciones jurídicas integrales en Culiacán, Sinaloa</p>
+        <a href="#contacto" class="btn">Agendar Consulta</a>
+    </div>
+</section>
+
+<section id="nosotros" data-aos="fade-right">
+    <h3>Nuestra Firma</h3>
+    <div class="about">
+        <p>Con más de [X] años de trayectoria, en Gamboa Y Mata Abogados nos distinguimos por un enfoque ético y personalizado. Nuestra misión es brindar seguridad jurídica a través de estrategias sólidas y resultados medibles.</p>
+    </div>
+</section>
+
+<section id="areas" style="background-color: #fff;">
+    <h3 data-aos="fade-up">Áreas de Especialidad</h3>
+    <div class="areas">
+        <div class="card" data-aos="zoom-in" data-aos-delay="100">
+            <h4>Derecho Civil</h4>
+            <p>Contratos, propiedad y responsabilidad civil con visión preventiva.</p>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="200">
+            <h4>Derecho Penal</h4>
+            <p>Defensa técnica y representación estratégica en procesos penales.</p>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="300">
+            <h4>Derecho Familiar</h4>
+            <p>Divorcios, pensiones y custodia, priorizando el bienestar familiar.</p>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="400">
+            <h4>Derecho Mercantil</h4>
+            <p>Asesoría corporativa y litigio comercial para empresas.</p>
+        </div>
+    </div>
+</section>
+
+<section id="equipo">
+    <h3 data-aos="fade-up">Nuestro Equipo</h3>
+    <div class="team">
+        <div class="member" data-aos="fade-up" data-aos-delay="100">
+            <div class="img-container">
+                <img src="https://via.placeholder.com/200" alt="Socio 1">
+            </div>
+            <h4>Lic. [Nombre]</h4>
+            <p>Socio Fundador</p>
+        </div>
+        <div class="member" data-aos="fade-up" data-aos-delay="200">
+            <div class="img-container">
+                <img src="https://via.placeholder.com/200" alt="Socio 2">
+            </div>
+            <h4>Lic. [Nombre]</h4>
+            <p>Especialista Civil</p>
+        </div>
+    </div>
+</section>
+
+<section id="contacto" data-aos="fade-up">
+    <h3>Contacto Directo</h3>
+    <div class="contact">
+        <p><strong>Ubicación:</strong> Av. Insurgentes #123, Culiacán, Sinaloa</p>
+        <p><strong>Horario:</strong> Lunes a Viernes 9:00 AM - 6:00 PM</p>
+        <br>
+        <a href="https://wa.me/TUNUMERO" class="btn">Enviar WhatsApp</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Gamboa Y Mata Abogados | Excelencia Legal en Sinaloa</p>
+</footer>
+
+<!-- AOS Animation Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
+</script>
+
+</body>
+</html>
