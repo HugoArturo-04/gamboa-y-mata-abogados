@@ -4,152 +4,216 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamboa Y Mata Abogados | Culiacán</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
+        :root {
+            --primary: #0a1f44;
+            --accent: #d4af37;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f4f6f8;
+            background-color: var(--light-bg);
             color: #333;
+            line-height: 1.7;
+            overflow-x: hidden;
         }
 
+        /* --- RESPONSIVE NAVIGATION --- */
         header {
-            background: #0a1f44;
+            background: rgba(10, 31, 68, 0.95);
+            backdrop-filter: blur(10px);
             color: white;
-            padding: 20px 10%;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 2000;
         }
 
-        header h1 {
+        .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 24px;
+            font-size: 1.4rem;
+            font-weight: 700;
         }
+
+        nav { display: flex; align-items: center; }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
-            font-weight: 400;
+            margin-left: 2rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
         }
 
-        nav a:hover {
-            color: #d4af37;
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
         }
 
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+        }
+
+        /* --- HERO SECTION (Adaptive Height) --- */
         .hero {
-            background: linear-gradient(rgba(10,31,68,0.8), rgba(10,31,68,0.8)),
-                        url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f");
-            background-size: cover;
-            background-position: center;
+            height: 85vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(10,31,68,0.75), rgba(10,31,68,0.75)),
+                        url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             color: white;
-            text-align: center;
-            padding: 120px 20px;
+            padding: 0 10%;
         }
 
-        .hero h2 {
-            font-size: 42px;
+        .hero-content h2 {
             font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
         }
 
-        .hero p {
-            margin-top: 20px;
-            font-size: 18px;
-        }
+        /* --- GRID SYSTEM (Responsive) --- */
+        section { padding: 80px 10%; }
 
-        section {
-            padding: 80px 10%;
-        }
-
-        section h3 {
+        .section-title {
             text-align: center;
-            font-size: 32px;
-            margin-bottom: 40px;
-            color: #0a1f44;
             font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 3rem;
+            color: var(--primary);
         }
 
-        .about, .contact {
-            text-align: center;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .areas {
+        .areas-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
         .card {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 15px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
         }
 
-        .card h4 {
-            margin-bottom: 15px;
-            color: #0a1f44;
-        }
+        .card:hover { transform: translateY(-10px); }
 
-        .team {
+        /* --- TEAM SECTION --- */
+        .team-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 40px;
+            gap: 3rem;
         }
 
-        .member {
-            text-align: center;
+        .member { text-align: center; width: 250px; }
+
+        .member-img-wrapper {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--white);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
         .member img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            margin-bottom: 15px;
+            transition: transform 0.5s ease;
         }
 
+        .member:hover img { transform: scale(1.1); }
+
+        /* --- BUTTONS --- */
         .btn {
             display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: #d4af37;
-            color: #0a1f44;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            border-radius: 5px;
+            transition: var(--transition);
+            border: 2px solid var(--accent);
         }
 
-        footer {
-            background: #0a1f44;
-            color: white;
-            text-align: center;
-            padding: 20px;
+        .btn:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        /* --- TABLET & PHONE OVERRIDES --- */
+        @media (max-width: 992px) {
+            header { padding: 1rem 5%; }
+            nav a { margin-left: 1.2rem; font-size: 0.75rem; }
         }
 
         @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 30px;
+            .menu-toggle { display: flex; }
+            
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 2rem 0;
+                display: none; /* Controlled by JS */
             }
+
+            nav.active { display: flex; }
+
+            nav a { margin: 1rem 0; font-size: 1rem; }
+            section { padding: 60px 5%; }
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Gamboa Y Mata Abogados</h1>
-    <nav>
+    <div class="logo">Gamboa Y Mata</div>
+    <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav id="nav-list">
         <a href="#nosotros">Nosotros</a>
         <a href="#areas">Áreas</a>
         <a href="#equipo">Equipo</a>
@@ -158,71 +222,75 @@
 </header>
 
 <section class="hero">
-    <h2>Defendiendo sus derechos con compromiso y experiencia</h2>
-    <p>Despacho jurídico en Culiacán, Sinaloa</p>
-    <a href="#contacto" class="btn">Agendar Consulta</a>
-</section>
-
-<section id="nosotros">
-    <h3>Nosotros</h3>
-    <div class="about">
-        <p>
-            [Aquí puedes escribir la historia del despacho, experiencia, valores y misión.]
-        </p>
+    <div class="hero-content" data-aos="fade-up">
+        <h2>Justicia con Excelencia</h2>
+        <p style="margin-bottom: 2rem;">Despacho Jurídico Líder en Culiacán, Sinaloa</p>
+        <a href="#contacto" class="btn">Solicitar Consulta</a>
     </div>
 </section>
 
 <section id="areas">
-    <h3>Áreas de Práctica</h3>
-    <div class="areas">
-        <div class="card">
+    <h3 class="section-title" data-aos="fade-up">Especialidades</h3>
+    <div class="areas-grid">
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
             <h4>Derecho Civil</h4>
-            <p>[Descripción breve del servicio]</p>
+            <p>Representación integral en contratos y litigios civiles.</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
             <h4>Derecho Penal</h4>
-            <p>[Descripción breve del servicio]</p>
+            <p>Estrategias de defensa sólidas y representación procesal.</p>
         </div>
-        <div class="card">
-            <h4>Derecho Familiar</h4>
-            <p>[Descripción breve del servicio]</p>
-        </div>
-        <div class="card">
-            <h4>Derecho Mercantil</h4>
-            <p>[Descripción breve del servicio]</p>
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+            <h4>Familiar</h4>
+            <p>Atención sensible y profesional en procesos familiares.</p>
         </div>
     </div>
 </section>
 
-<section id="equipo">
-    <h3>Nuestro Equipo</h3>
-    <div class="team">
-        <div class="member">
-            <img src="https://via.placeholder.com/180" alt="Abogado 1">
-            <h4>[Nombre del Abogado]</h4>
-            <p>[Especialidad]</p>
+<section id="equipo" style="background-color: #f0f2f5;">
+    <h3 class="section-title" data-aos="fade-up">Nuestro Equipo</h3>
+    <div class="team-container">
+        <div class="member" data-aos="zoom-in">
+            <div class="member-img-wrapper">
+                <img src="https://via.placeholder.com/200" alt="Abogado">
+            </div>
+            <h4>Lic. Gamboa</h4>
+            <p>Socio Director</p>
         </div>
-        <div class="member">
-            <img src="https://via.placeholder.com/180" alt="Abogado 2">
-            <h4>[Nombre del Abogado]</h4>
-            <p>[Especialidad]</p>
+        <div class="member" data-aos="zoom-in" data-aos-delay="200">
+            <div class="member-img-wrapper">
+                <img src="https://via.placeholder.com/200" alt="Abogado">
+            </div>
+            <h4>Lic. Mata</h4>
+            <p>Socio Jurídico</p>
         </div>
-    </div>
-</section>
-
-<section id="contacto">
-    <h3>Contacto</h3>
-    <div class="contact">
-        <p><strong>Teléfono:</strong> [Número aquí]</p>
-        <p><strong>Email:</strong> [Correo aquí]</p>
-        <p><strong>Dirección:</strong> [Dirección en Culiacán, Sinaloa]</p>
-        <a href="#" class="btn">WhatsApp</a>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Gamboa Y Mata Abogados - Todos los derechos reservados</p>
+    <p>© 2026 Gamboa Y Mata Abogados | Culiacán, Sin.</p>
 </footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ once: true });
+
+    // Mobile Menu Toggle
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    mobileMenu.addEventListener('click', () => {
+        navList.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked (for mobile)
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            navList.classList.remove('active');
+        });
+    });
+</script>
 
 </body>
 </html>
