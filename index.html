@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamboa & Mata Abogados, S.C. | Firma Boutique</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         :root {
-            --primary-color: #0a2342; /* Azul Marino Profundo */
-            --accent-color: #9e8245;  /* Dorado sutil para detalles */
+            --primary-color: #0a2342; 
+            --accent-color: #9e8245;  
             --text-dark: #333;
             --bg-light: #f4f4f4;
         }
@@ -20,6 +21,13 @@
             line-height: 1.6;
             color: var(--text-dark);
             scroll-behavior: smooth;
+            /* Animación de entrada para todo el sitio */
+            animation: fadeInPage 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Navegación */
@@ -42,135 +50,9 @@
         nav ul li a { text-decoration: none; color: var(--primary-color); font-weight: 400; font-size: 0.9rem; transition: 0.3s; }
         nav ul li a:hover { color: var(--accent-color); }
 
-        /* Hero Section (Portada) */
+        /* Hero Section con Imagen de Fondo de Derecho */
         header {
-            height: 80vh;
-            background: linear-gradient(rgba(10, 35, 66, 0.8), rgba(10, 35, 66, 0.8)), url('logo-background.jpg') center/contain no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-        }
-
-        header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1rem; }
-        header p { font-size: 1.2rem; max-width: 700px; font-weight: 300; }
-
-        /* Secciones Generales */
-        section { padding: 80px 10%; }
-        h2 { font-family: 'Playfair Display', serif; color: var(--primary-color); font-size: 2.5rem; margin-bottom: 2rem; text-align: center; }
-
-        /* La Firma */
-        .firma-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        .firma-content p { margin-bottom: 15px; text-align: justify; }
-
-        /* Servicios */
-        .services-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-card { background: var(--bg-light); padding: 30px; border-top: 5px solid var(--accent-color); transition: 0.3s; }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .service-card h3 { color: var(--primary-color); margin-bottom: 15px; }
-        .service-card ul { padding-left: 20px; font-size: 0.9rem; }
-
-        /* Formulario de Contacto */
-        form { max-width: 600px; margin: 0 auto; display: grid; gap: 15px; }
-        input, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Montserrat', sans-serif; }
-        button { background: var(--primary-color); color: white; border: none; padding: 15px; cursor: pointer; font-weight: 700; transition: 0.3s; }
-        button:hover { background: var(--accent-color); }
-
-        /* Responsivo */
-        @media (max-width: 768px) {
-            nav { flex-direction: column; }
-            nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
-            nav ul li { margin: 5px 10px; }
-            .firma-grid { grid-template-columns: 1fr; }
-            header h1 { font-size: 2rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <div class="logo">GAMBOA & MATA ABOGADOS</div>
-        <ul>
-            <li><a href="#inicio">INICIO</a></li>
-            <li><a href="#firma">LA FIRMA</a></li>
-            <li><a href="#socios">SOCIOS</a></li>
-            <li><a href="#servicios">SERVICIOS</a></li>
-            <li><a href="#contacto">CONTACTO</a></li>
-        </ul>
-    </nav>
-
-    <header id="inicio">
-        <h1>Gamboa & Mata Abogados, S.C.</h1>
-        <p>Firma boutique de servicios jurídicos profesionales especializada en materia fiscal y administrativa.</p>
-    </header>
-
-    <section id="firma">
-        <h2>La Firma</h2>
-        <div class="firma-grid">
-            <div class="firma-content">
-                <p>Fundada en noviembre de 2013 por los licenciados Elena Margarita Mata Loera y Hugo Arturo Gamboa De la Cruz[cite: 6].</p>
-                <p>Con sede en Culiacán, Sinaloa, nuestra práctica se extiende por todo el territorio nacional, brindando servicios que cumplen con los más altos estándares de calidad[cite: 7, 8].</p>
-                <p><strong>Nuestra Misión:</strong> Constituirnos en una referencia en el noroeste del país, distinguiéndonos por la excelencia en el servicio[cite: 11].</p>
-            </div>
-            <div class="firma-content" style="background: var(--primary-color); color: white; padding: 30px; border-radius: 8px;">
-                <h3>Nuestros Valores [cite: 10]</h3>
-                <ul>
-                    <li>Honestidad y búsqueda de la justicia.</li>
-                    <li>Respeto por la profesión y el cliente.</li>
-                    <li>Actualización profesional constante.</li>
-                    <li>Actitud de servicio y lealtad institucional.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="socios" style="background-color: var(--bg-light);">
-        <h2>Socios</h2>
-        <p style="text-align: center;">Espacio reservado para fotografía y reseña profesional de los socios fundadores[cite: 12].</p>
-    </section>
-
-    <section id="servicios">
-        <h2>Servicios Profesionales</h2>
-        <div class="services-container">
-            <div class="service-card">
-                <h3>I. Litigio Fiscal y Administrativo [cite: 14]</h3>
-                <ul>
-                    <li>Estrategia de defensa contra actos de autoridades federales, estatales y municipales[cite: 15].</li>
-                    <li>Demandas de amparo contra leyes inconstitucionales[cite: 16].</li>
-                    <li>Responsabilidad patrimonial del Estado[cite: 17].</li>
-                    <li>Defensa ante SAT, IMSS, INFONAVIT y PROFECO[cite: 19].</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>II. Derecho Corporativo [cite: 19]</h3>
-                <ul>
-                    <li>Redacción de contratos comerciales[cite: 20].</li>
-                    <li>Constitución de sociedades[cite: 20].</li>
-                    <li>Auditorías corporativas a empresas[cite: 20].</li>
-                    <li>Formulación de actas de asambleas[cite: 20].</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <form>
-            <input type="text" placeholder="Nombre y Apellido" required>
-            <input type="email" placeholder="Correo Electrónico" required>
-            <input type="tel" placeholder="Teléfono">
-            <input type="text" placeholder="Lugar (Ciudad/Estado)">
-            <textarea rows="5" placeholder="Consulta o Comentario"></textarea>
-            <button type="submit">ENVIAR CONSULTA</button>
-        </form>
-    </section>
-
-    <footer style="background: var(--primary-color); color: white; text-align: center; padding: 20px;">
-        <p>&copy; 2026 Gamboa & Mata Abogados, S.C. Todos los derechos reservados.</p>
-    </footer>
-
-</body>
-</html>
+            height: 90vh;
+            /* Imagen de fondo relacionada con derecho (puedes cambiar el link por tu propia imagen) */
+            background: linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.7)), 
+                        url('https://
