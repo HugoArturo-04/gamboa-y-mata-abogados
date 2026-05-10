@@ -55,4 +55,110 @@
             height: 90vh;
             /* Imagen de fondo relacionada con derecho (puedes cambiar el link por tu propia imagen) */
             background: linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.7)), 
-                        url('https://
+                        url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        header h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 1rem; }
+        header p { font-size: 1.4rem; max-width: 800px; font-weight: 300; }
+
+        /* Secciones */
+        section { padding: 100px 10%; }
+        h2 { font-family: 'Playfair Display', serif; color: var(--primary-color); font-size: 2.5rem; margin-bottom: 2rem; text-align: center; }
+
+        .firma-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        
+        .services-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: var(--bg-light); padding: 40px; border-bottom: 4px solid var(--accent-color); transition: 0.4s; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+
+        form { max-width: 700px; margin: 0 auto; display: grid; gap: 20px; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        input, textarea { width: 100%; padding: 15px; border: 1px solid #eee; background: #fafafa; border-radius: 4px; }
+        button { background: var(--primary-color); color: white; border: none; padding: 18px; cursor: pointer; font-weight: 700; letter-spacing: 1px; transition: 0.3s; }
+        button:hover { background: var(--accent-color); transform: scale(1.02); }
+
+        @media (max-width: 768px) {
+            .firma-grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 2.2rem; }
+            nav ul { display: none; } /* En un sitio real, aquí pondrías un menú hamburguesa */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">GAMBOA & MATA ABOGADOS</div>
+        <ul>
+            <li><a href="#inicio">INICIO</a></li>
+            <li><a href="#firma">LA FIRMA</a></li>
+            <li><a href="#socios">SOCIOS</a></li>
+            <li><a href="#servicios">SERVICIOS</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
+        </ul>
+    </nav>
+
+    <header id="inicio">
+        <h1 class="animate__animated animate__fadeInDown">Gamboa & Mata Abogados, S.C.</h1>
+        <p class="animate__animated animate__fadeInUp">Firma boutique de servicios jurídicos profesionales especializada en materia fiscal y administrativa.</p>
+    </header>
+
+    <section id="firma">
+        <h2>La Firma</h2>
+        <div class="firma-grid">
+            <div>
+                <p>Constituida con el objetivo de prestar servicios profesionales especializados en las áreas de asesoría, consultoría y litigio.</p>
+                <br>
+                <p>Fundada en noviembre de 2013 por Elena Margarita Mata Loera y Hugo Arturo Gamboa De la Cruz, egresados de la Universidad Panamericana, combinando más de 21 años de experiencia.</p>
+            </div>
+            <div style="border-left: 2px solid var(--accent-color); padding-left: 30px;">
+                <h3 style="color: var(--accent-color); margin-bottom: 15px;">Compromiso</h3>
+                <p>Brindamos un servicio que satisface ampliamente las expectativas de nuestros clientes bajo los más altos estándares de calidad exigibles.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" style="background: #fff;">
+        <h2>Especialidades</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <h3>Litigio Fiscal</h3>
+                <p>Defensa estratégica contra actos de autoridades federales, estatales y municipales.</p>
+            </div>
+            <div class="service-card">
+                <h3>Derecho Corporativo</h3>
+                <p>Redacción de contratos, constitución de sociedades y auditorías corporativas.</p>
+            </div>
+            <div class="service-card">
+                <h3>Amparo</h3>
+                <p>Interposición de demandas contra leyes inconstitucionales y normativa estatal.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" style="background: var(--bg-light);">
+        <h2>Contacto</h2>
+        <form>
+            <input type="text" placeholder="Nombre completo" required>
+            <div style="display: flex; gap: 10px;">
+                <input type="email" placeholder="Correo electrónico" required>
+                <input type="tel" placeholder="Teléfono">
+            </div>
+            <input type="text" placeholder="Ciudad / Estado">
+            <textarea rows="4" placeholder="Escriba su consulta aquí..."></textarea>
+            <button type="submit">SOLICITAR CONSULTA PROFESIONAL</button>
+        </form>
+    </section>
+
+    <footer style="background: var(--primary-color); color: white; text-align: center; padding: 40px 20px;">
+        <p>Gamboa & Mata Abogados, S.C. | Culiacán, Sinaloa</p>
+        <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">&copy; 2026 Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
